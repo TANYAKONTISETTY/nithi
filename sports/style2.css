@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('logo.png') no-repeat center center; /* Background image without fixed */
+    background-size: 75%; /* Reduces the background image size to 50% of the container */
+    background-color: #003135; /* Fallback background color */
+    background-attachment: fixed; /* Keeps background fixed while scrolling */
+    background-position: center; /* Position the image in the top center */
+    color: #AFDDE5; /* Pale Blue */
+}
+
+header {
+    background: url('banner.jpg') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    background-color: #024950; /* Teal */
+}
+
+.card {
+    background-color: #964734; /* Rust */
+    border: none;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #AFDDE5; /* Pale Blue */
+    font-weight: bold;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #0FA4AF; /* Light Teal */
+    color: #003135; /* Dark Teal */
+    padding: 10px 0;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    margin-top: 150px;
+}
+
+/* Transparent box styling */
+.transparent-box {
+    display: inline-block;
+    padding: 40px; /* Increased padding to include space around heading */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    border: 2px solid orange; /* Orange border */
+    border-radius: 15px; /* Smooth rounded corners */
+    margin-top: 20px;
+    width: fit-content;
+}
+
+.content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.btn-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    background-color: orange;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: darkorange;
+}
+
+.contact-info {
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid orange; /* Orange border for contact info */
+}
