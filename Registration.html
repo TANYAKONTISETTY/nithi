@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Payment</title>
+    <link rel="icon" href="panther.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="Registration.css">
+</head>
+<body>
+    <!-- Registration Form -->
+    <section id="registration">
+        <h2>Register for Games</h2>
+        <form id="registration-form" enctype="multipart/form-data" method="POST" action="https://api.web3forms.com/submit" >
+            <!-- Team Details -->
+            <input type="hidden" name="access_key" value="f1aeba21-3679-4ec2-a630-c8892ed59b63">
+            <label for="team-name">Team Name:</label>
+            <input type="text" id="team-name" name="team_name" required><br><br>
+
+            <label for="college-name">College Name:</label>
+            <input type="text" id="college-name" name="college_name" required><br><br>
+
+            <label for="team-head">Team Head Name:</label>
+            <input type="text" id="team-head" name="team_head" required><br><br>
+
+            <label for="whatsapp">Team Head Number:</label><br><br>
+            <input type="tel" id="whatsapp" name="whatsapp_number" pattern="\d{10}" required
+            title="Please enter a valid 10-digit phone number" maxlength="10" 
+            oninput="this.value=this.value.replace(/[^0-9]/g,'');"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="team_head_email" placeholder="Enter a valid email address" required><br><br>
+
+            <!-- Game Selection -->
+            <fieldset>
+                <legend>Select Games (required):</legend>
+
+                <!-- Cricket -->
+                <h3>Cricket</h3>
+                <input type="checkbox" id="cricket-men" name="game" value="Cricket Men" data-price="5000">
+                <label for="cricket-men">Cricket (Men) ₹5000</label><br>
+                <input type="checkbox" id="cricket-women" name="game" value="Cricket Women" data-price="2500">
+                <label for="cricket-women">Cricket (Women) ₹2500</label><br>
+
+                <!-- Basketball -->
+                <h3>Basketball</h3>
+                <input type="checkbox" id="basketball-men" name="game" value="Basketball Men" data-price="3500">
+                <label for="basketball-men">Basketball (Men) ₹3500</label><br>
+                <input type="checkbox" id="basketball-women" name="game" value="Basketball Women" data-price="2500">
+                <label for="basketball-women">Basketball (Women) ₹2500</label><br>
+
+                <!-- Volleyball -->
+                <h3>Volleyball</h3>
+                <input type="checkbox" id="volleyball-men" name="game" value="Volleyball Men" data-price="2500">
+                <label for="volleyball-men">Volleyball (Men) ₹2500</label><br>
+                <input type="checkbox" id="volleyball-women" name="game" value="Volleyball Women" data-price="1500">
+                <label for="volleyball-women">Volleyball (Women) ₹1500</label><br>
+
+                <!-- Badminton -->
+                <h3>Badminton</h3>
+                <input type="checkbox" id="badminton-men" name="game" value="Badminton Men" data-price="2500">
+                <label for="badminton-men">Badminton (Men) ₹2500</label><br>
+                <input type="checkbox" id="badminton-women" name="game" value="Badminton Women" data-price="2000">
+                <label for="badminton-women">Badminton (Women) ₹2000</label><br>
+
+                <!-- Table Tennis -->
+                <h3>Table Tennis</h3>
+                <input type="checkbox" id="tabletennis-men" name="game" value="Table Tennis Men" data-price="2000">
+                <label for="tabletennis-men">Table Tennis (Men) ₹2000</label><br>
+                <input type="checkbox" id="tabletennis-women" name="game" value="Table Tennis Women" data-price="1500">
+                <label for="tabletennis-women">Table Tennis (Women) ₹1500</label><br>
+
+                <!-- Football -->
+                <h3>Football</h3>
+                <input type="checkbox" id="football-men" name="game" value="Football Men" data-price="3500">
+                <label for="football-men">Football (Men) ₹3500</label><br>
+
+                <!-- Kabaddi -->
+                <h3>Kabaddi</h3>
+                <input type="checkbox" id="kabaddi-men" name="game" value="Kabaddi Men" data-price="2500">
+                <label for="kabaddi-men">Kabaddi (Men) ₹2500</label><br>
+
+                <!-- Throwball -->
+                <h3>Throwball</h3>
+                <input type="checkbox" id="throwball-women" name="game" value="Throwball Women" data-price="2000">
+                <label for="throwball-women">Throwball (Women) ₹2000</label><br>
+
+                <!-- Chess -->
+                <h3>Chess</h3>
+                <input type="checkbox" id="chess-men" name="game" value="Chess Men" data-price="1000">
+                <label for="chess-men">Chess (Men) ₹1000</label><br>
+                <input type="checkbox" id="chess-women" name="game" value="Chess Women" data-price="1000">
+                <label for="chess-women">Chess (Women) ₹1000</label><br>
+
+                <!-- Carroms -->
+                <h3>Carroms</h3>
+                <input type="checkbox" id="carroms-men" name="game" value="Carroms Men" data-price="1000">
+                <label for="carroms-men">Carroms (Men) ₹1000</label><br>
+                <input type="checkbox" id="carroms-women" name="game" value="Carroms Women" data-price="1000">
+                <label for="carroms-women">Carroms (Women) ₹1000</label><br>
+            </fieldset><br>
+
+            
+
+            
+
+            <input type="hidden" id="total_amount" name="total_amount" value="0">
+
+            
+        </form>
+    </section>
+
+    <!-- Subtotal Display -->
+    <section id="subtotal-section">
+        <h2>Subtotal</h2>
+        <p id="subtotal-amount">₹0</p>
+    </section>
+
+    <!-- Payment Section -->
+    <section id="payment">
+        <h2>Payment </h2>
+        <form id="payment-form">
+            
+
+            <!-- Bank Details (hidden by default) -->
+            <div id="bank-details" style="display: none;">
+                <p>Bank Account: XXXX-XXXX-XXXX</p>
+                <p>IFSC Code: XXXX1234</p>
+            </div><br>
+
+            <button type="button" id="payNow" onclick="window.location.href='payment.html'">Pay Now</button>
+        
+        </form>
+         <!-- Transaction ID Field -->
+         <label for="transaction-id">Transaction ID (12 alphanumeric characters):</label>
+         <input type="text" id="transaction-id" name="transaction_id" pattern="[A-Za-z0-9]{12}" required
+             title="Please enter a valid 12-character alphanumeric Transaction ID" maxlength="12" minlength="12"
+             oninput="this.value=this.value.replace(/[^A-Za-z0-9]/g,'');"><br><br>
+             <input type="submit" value="Register">
+    </section>
+
+     <!-- Payment Screenshot Upload -->
+     <label for="payment-screenshot">Upload Payment Screenshot:</label>
+     <input type="file" id="payment-screenshot" name="payment_screenshot" accept="image/*" required>
+     <br><br>
+
+    <!-- Confirmation Message -->
+    <section id="confirmation" style="display: none;">
+        <h2>Registration Confirmed</h2>
+        <p>Your registration is confirmed. You will receive an email with the details.</p>
+    </section>
+
+    <script src="Registration.js"></script>
+</body>
+</html>
